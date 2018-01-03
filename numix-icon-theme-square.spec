@@ -1,14 +1,17 @@
 %global commit 084e0ae8a956c4ad6e19af81e3ad3c5fa9e2198f
+%global gittag 17-12-25
+
+%global gitdate %(date -d %{gittag} +%Y%m%d)
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           numix-icon-theme-square
 Version:        0.1.0
-Release:        1.git%{shortcommit}%{?dist}
+Release:        1.%{gitdate}.git%{shortcommit}%{?dist}
 Summary:        Numix Project square icon theme
 License:        GPLv3
 
 URL:            https://github.com/numixproject/numix-icon-theme-square
-Source:         https://github.com/numixproject/numix-icon-theme-square/archive/%{commit}.tar.gz#/numix-icon-theme-square-%{shortcommit}.tar.gz
+Source:         https://github.com/numixproject/numix-icon-theme-square/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 BuildArch:      noarch
 Requires:       numix-icon-theme
@@ -21,8 +24,8 @@ Numix Square is a modern icon theme for Linux from the Numix project.
 
 %install
 mkdir -p %{buildroot}%{_datadir}/icons
-cp -r Numix-Square %{buildroot}%{_datadir}/icons/Numix-Square
-cp -r Numix-Square-Light %{buildroot}%{_datadir}/icons/Numix-Square-Light
+cp -pr Numix-Square %{buildroot}%{_datadir}/icons/Numix-Square
+cp -pr Numix-Square-Light %{buildroot}%{_datadir}/icons/Numix-Square-Light
 
 %post
 touch -c %{_datadir}/icons/Numix-Square &>/dev/null || :
@@ -47,7 +50,5 @@ gtk-update-icon-cache %{_datadir}/icons/Numix-Square-Light &>/dev/null || :
 %{_datadir}/icons/Numix-Square-Light
 
 %changelog
-* Mon Jan 01 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-1.git
+* Mon Jan 01 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-1..git
 - Initial packaging
-
-
