@@ -1,5 +1,5 @@
-%global commit f8e32d8eb01843784ac201d13265a483ce64926b
-%global gittag 18-02-16
+%global commit 1eda9db7ba92a5808dce5927ca9241cce58de842
+%global gittag 18-04-04
 
 %global gitdate %(date -d %{gittag} +%Y%m%d)
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
