@@ -1,12 +1,12 @@
-%global commit 111a1733d6630950ee980bda46246a3da95b45e6
-%global gittag 18-06-28
+%global commit 9fc27a917843883523f634dc46ba6156f8cac03b
+%global gittag 18.07.17
 
-%global gitdate %(date -d %{gittag} +%Y%m%d)
+%global gitdate %(date -d %(echo %{gittag} | tr -d '.') +%Y%m%d)
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           numix-icon-theme-square
 Version:        0.1.0
-Release:        1.%{gitdate}.git%{shortcommit}%{?dist}
+Release:        2.%{gitdate}.git%{shortcommit}%{?dist}
 Summary:        Numix Project square icon theme
 License:        GPLv3
 
@@ -50,5 +50,8 @@ gtk-update-icon-cache %{_datadir}/icons/Numix-Square-Light &>/dev/null || :
 %{_datadir}/icons/Numix-Square-Light
 
 %changelog
+* Sun Jul 22 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-2..git
+- Accept new git tag date format
+
 * Mon Jan 01 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-1..git
 - Initial packaging
