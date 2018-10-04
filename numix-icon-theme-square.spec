@@ -50,8 +50,11 @@ gtk-update-icon-cache %{_datadir}/icons/Numix-Square-Light &>/dev/null || :
 %{_datadir}/icons/Numix-Square-Light
 
 %changelog
-* Sun Jul 22 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-2..git
+* Wed Aug 29 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-2.20180829.git307e742
+- Update to release 18.08.29
+
+* Sun Jul 22 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-2.20180717.git9fc27a9
 - Accept new git tag date format
 
-* Mon Jan 01 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-1..git
+* Mon Jan 01 2018 Brendan Early <mymindstorm1@gmail.com> - 0.1.0-1.20171225.git084e0ae
 - Initial packaging
